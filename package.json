@@ -15,6 +15,7 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+<<<<<<< HEAD
     "clsx": "^2.1.1",
     "gsap": "^3.13.0",
     "react": "^19.1.0",
@@ -22,6 +23,12 @@
     "react-icons": "^5.5.0",
     "react-scripts": "5.0.1",
     "react-use": "^17.6.0",
+=======
+    "gsap": "^3.13.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-scripts": "5.0.1",
+>>>>>>> 32dfd871929e7a1d32524a3f0292c25b7d48abb4
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -53,4 +60,8 @@
     "@types/gsap": "^1.20.2",
     "tailwindcss": "^3.4.17"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 32dfd871929e7a1d32524a3f0292c25b7d48abb4
