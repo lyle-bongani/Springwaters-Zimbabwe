@@ -1,39 +1,27 @@
 import React from 'react';
-import Header from '../components/home/Header';
-import Footer from '../components/home/Footer';
 
-const Contact = () => (
-    <div className="bg-white min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1 py-12 px-4 max-w-3xl mx-auto">
-            <h1 className="text-3xl font-bold text-primary mb-8">Contact Us</h1>
-            <form className="bg-gray-50 p-6 rounded shadow mb-8 space-y-4">
-                <div>
-                    <label className="block text-black-grey mb-1">Name</label>
-                    <input type="text" className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your Name" />
-                </div>
-                <div>
-                    <label className="block text-black-grey mb-1">Email</label>
-                    <input type="email" className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary" placeholder="you@email.com" />
-                </div>
-                <div>
-                    <label className="block text-black-grey mb-1">Message</label>
-                    <textarea className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary" rows={5} placeholder="How can we help you?" />
-                </div>
-                <button type="submit" className="bg-primary text-white px-6 py-2 rounded font-semibold hover:bg-black-grey transition">Send Message</button>
-            </form>
-            <div className="mb-8">
-                <h2 className="text-xl font-semibold text-primary mb-2">Contact Information</h2>
-                <p className="text-black-grey">Phone: +263 77 123 4567</p>
-                <p className="text-black-grey">Email: info@springwaters.co.zw</p>
-                <p className="text-black-grey">Address: 123 Waterway, Harare, Zimbabwe</p>
-            </div>
-            <div className="bg-gray-100 h-64 rounded flex items-center justify-center text-black-grey">
-                [Map Placeholder]
-            </div>
-        </main>
-        <Footer />
-    </div>
-);
+const Contact: React.FC = () => {
+  return (
+    <section className="bg-white pt-32 pb-16 px-4 flex flex-col items-center min-h-[80vh] mt-16">
+      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-[#4169e1]">Contact Us</h1>
+      <p className="text-lg text-[#4169e1] text-center mb-10 max-w-xl">We'd love to hear from you! Fill out the form below and our team will get back to you as soon as possible.</p>
+      <form className="w-full max-w-lg flex flex-col gap-6 bg-white/80 p-8 rounded-2xl shadow-md">
+        <div>
+          <label className="block text-[#0a2259] font-semibold mb-2">Name</label>
+          <input type="text" className="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4169e1]" placeholder="Your Name" />
+        </div>
+        <div>
+          <label className="block text-[#0a2259] font-semibold mb-2">Email</label>
+          <input type="email" className="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4169e1]" placeholder="you@email.com" />
+        </div>
+        <div>
+          <label className="block text-[#0a2259] font-semibold mb-2">Message</label>
+          <textarea className="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4169e1]" rows={5} placeholder="How can we help you?" />
+        </div>
+        <button type="submit" className="bg-[#4169e1] text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition">Send Message</button>
+      </form>
+    </section>
+  );
+};
 
 export default Contact; 

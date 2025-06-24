@@ -1,42 +1,48 @@
 import React from 'react';
-import Header from '../components/home/Header';
-import Footer from '../components/home/Footer';
+import { FaWater, FaSeedling, FaTruck, FaTools } from 'react-icons/fa';
 
 const services = [
     {
+        icon: FaWater,
         title: 'Borehole Drilling & Installation',
-        desc: 'Access reliable groundwater with our expert borehole drilling services in Zimbabwe. We provide precise siting, robust casing, and efficient pump installations (solar, electric, manual) for a consistent water supply.'
+        desc: 'Expert siting, robust casing, and efficient pump installations for reliable groundwater access.'
     },
     {
+        icon: FaSeedling,
         title: 'Irrigation Systems & Design',
-        desc: 'Maximize your agricultural yields and manage water efficiently with our custom irrigation system design and setup in Zimbabwe. We offer both manual and automated irrigation solutions for farms and gardens.'
+        desc: 'Custom irrigation solutions to maximize agricultural productivity and water efficiency.'
     },
     {
+        icon: FaTruck,
         title: 'Bulk Water Supply & Delivery',
-        desc: 'For immediate and convenient water needs, our bulk water delivery service in Zimbabwe brings clean water directly to your doorstep. Available in volumes from 2,000L to 20,000L for any requirement.'
+        desc: 'Clean water delivered directly to your site, available in various volumes for any need.'
     },
     {
+        icon: FaTools,
         title: 'Borehole Maintenance',
-        desc: 'Ensure the longevity and optimal performance of your existing borehole with our professional maintenance, repairs, and rehabilitation services. We keep your water well running smoothly.'
+        desc: 'Professional maintenance, repairs, and rehabilitation to keep your water system running smoothly.'
     },
 ];
 
-const Services = () => (
-    <div className="bg-white min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1 py-12 px-4 max-w-4xl mx-auto">
-            <h1 className="text-3xl font-bold text-primary mb-8">Our Services</h1>
-            <div className="space-y-8">
-                {services.map((service, idx) => (
-                    <section key={idx} className="bg-gray-50 p-6 rounded shadow">
-                        <h2 className="text-2xl font-semibold text-primary mb-2">{service.title}</h2>
-                        <p className="text-black-grey">{service.desc}</p>
-                    </section>
-                ))}
+const WaterServices: React.FC = () => {
+    return (
+        <section className="bg-white pt-32 pb-16 px-4 flex flex-col items-center min-h-[60vh] mt-16">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-[#4169e1]">Our Water Services</h1>
+            <p className="text-lg text-[#4169e1] text-center mb-10 max-w-2xl">Comprehensive water solutions for homes, farms, and businesses across Zimbabwe.</p>
+            <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-start">
+                {services.map((service, idx) => {
+                    const Icon = service.icon as React.FC<React.SVGProps<SVGSVGElement>>;
+                    return (
+                        <div key={idx} className="flex flex-col items-center text-center px-4">
+                            <Icon className="text-3xl text-[#4169e1] mb-2" />
+                            <h2 className="text-xl font-bold text-[#0a2259] mb-2">{service.title}</h2>
+                            <p className="text-[#0a2259] text-base">{service.desc}</p>
+                        </div>
+                    );
+                })}
             </div>
-        </main>
-        <Footer />
-    </div>
-);
+        </section>
+    );
+};
 
-export default Services; 
+export default WaterServices; 

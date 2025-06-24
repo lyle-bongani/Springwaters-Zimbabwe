@@ -8,7 +8,7 @@ const Hero = () => {
             {/* Gradient overlay for smooth transition */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-900/60 to-transparent z-0" />
             {/* Content */}
-            <div className="relative z-10 flex flex-col justify-center items-start text-left w-full max-w-3xl px-8 py-20 mt-56 ml-[5vw]">
+            <div className="relative z-10 flex flex-col justify-center items-start text-left w-full max-w-3xl px-8 py-20 mt-10 md:mt-56 ml-[5vw]">
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight drop-shadow-lg">
                     Unlock Reliable Water Access Across Zimbabwe
                 </h1>

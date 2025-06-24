@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import AgricultureIcon from '@mui/icons-material/Agriculture';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 
 const images = [
     process.env.PUBLIC_URL + '/images/pics/title-image.jpg',
