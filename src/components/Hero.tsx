@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { FiPhone } from 'react-icons/fi';
 
 const Hero = () => {
     return (
@@ -15,9 +17,23 @@ const Hero = () => {
                 <p className="text-2xl md:text-3xl font-semibold text-white mb-10 drop-shadow">
                     Springwaters Zimbabwe: Borehole Drilling, Irrigation & Water Solutions
                 </p>
-                <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg shadow transition text-lg">
-                    Contact Us
-                </button>
+                <div className="flex gap-4">
+                    <a
+                        href="#contact"
+                        className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg shadow transition text-lg"
+                    >
+                        {React.createElement(FiPhone as React.FC<React.SVGProps<SVGSVGElement>>, { className: 'text-2xl' })} Contact Us
+                    </a>
+                    <a
+                        href="https://wa.me/263771234567"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-green-500 text-white font-semibold px-8 py-4 rounded-lg shadow transition text-lg hover:bg-green-600"
+                        aria-label="Chat on WhatsApp"
+                    >
+                        {React.createElement(FaWhatsapp as React.FC<React.SVGProps<SVGSVGElement>>, { className: 'text-2xl' })} WhatsApp
+                    </a>
+                </div>
             </div>
         </section>
     );

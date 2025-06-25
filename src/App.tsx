@@ -29,7 +29,7 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white rounded-2xl shadow-lg overflow-hidden font-sans">
+      <div className="min-h-screen bg-white shadow-lg overflow-hidden font-sans">
         <Header />
         <Routes>
           <Route path="/" element={

@@ -64,7 +64,7 @@ const WaterServices: React.FC = () => {
                 <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-white px-4">
                     <h1 className="text-4xl md:text-5xl font-extrabold drop-shadow mb-3 text-center">Our Water Services</h1>
                     <p className="text-lg md:text-xl font-medium text-center max-w-2xl mx-auto drop-shadow">Comprehensive water solutions for homes, farms, and businesses across Zimbabwe.</p>
-                </div>
+                        </div>
             </div>
 
             {/* Main Service Categories */}
@@ -103,8 +103,8 @@ const WaterServices: React.FC = () => {
                             <span className="text-[#4169e1] font-semibold mt-2 group-hover:underline text-sm">Learn More &rarr;</span>
                         </Link>
                     ))}
-                </div>
-            </section>
+            </div>
+        </section>
         </>
     );
 };
