@@ -2,7 +2,7 @@ import React from 'react';
 
 const AdvantageSection: React.FC = () => {
     return (
-        <section className="w-full bg-[#4169e1] px-4 py-24 flex flex-col items-center mt-24">
+        <section id="why-choose-section" className="w-full bg-[#4169e1] px-4 py-24 flex flex-col items-center mt-24">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-8 text-center drop-shadow-sm">Your Advantage with Springwaters: Beyond Just Water</h2>
             <p className="text-xl text-blue-100 text-center mb-16 max-w-3xl font-medium">Choosing Springwaters means choosing a partner committed to your long-term water security.</p>
             <div className="w-full max-w-4xl">

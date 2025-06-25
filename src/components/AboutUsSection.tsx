@@ -35,16 +35,16 @@ const AboutUsSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-[#4169e1] mb-6 leading-tight">
                     We Are Business Consultants Dedicated To Driving Your Success
                 </h2>
-                <p className="text-gray-700 mb-6">
+                <p className="text-gray-700 mb-6 text-lg md:text-xl font-medium">
                     At Springwaters, we are your trusted partner for comprehensive water solutions, committed to ensuring sustainable and clean water access throughout Zimbabwe.
                 </p>
-                <p className="text-gray-700 mb-6">
+                <p className="text-gray-700 mb-6 text-lg md:text-xl font-medium">
                     Our expertise spans from initial site assessment to complete system installation, addressing the diverse needs of our clients.
                 </p>
-                <p className="text-gray-700 mb-6">
+                <p className="text-gray-700 mb-6 text-lg md:text-xl font-medium">
                     Whether you require expert borehole drilling for a new water source, efficient irrigation systems to boost agricultural productivity, or dependable bulk water supply for immediate needs.
                 </p>
-                <p className="text-gray-700 mb-10">
+                <p className="text-gray-700 mb-10 text-lg md:text-xl font-medium">
                     Springwaters delivers tailored solutions for homes, farms, and businesses across the nation.
                 </p>
                 <div className="flex items-center mb-6">

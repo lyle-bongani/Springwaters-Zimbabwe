@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import AboutHero from '../components/about/AboutHero';
 import MissionVisionSection from '../components/about/MissionVisionSection';
 import ValuesSection from '../components/about/ValuesSection';

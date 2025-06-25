@@ -62,7 +62,7 @@ const ValuesSection: React.FC = () => {
     }, [isMobile]);
 
     return (
-        <section className="w-full bg-white px-4 py-24 flex flex-col items-center mt-16">
+        <section id="values-section" className="w-full bg-white px-4 py-24 flex flex-col items-center mt-16">
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#4169e1] mb-12 text-center drop-shadow-sm">Our Values</h2>
             {/* Custom carousel for mobile */}
             <div className="block md:hidden w-full max-w-xs mx-auto relative">

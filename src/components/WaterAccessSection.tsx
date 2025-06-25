@@ -38,10 +38,10 @@ const WaterAccessSection = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
                         Your Foundation for Water Independence in Zimbabwe
                     </h2>
-                    <p className="text-lg text-gray-700 mb-6">
+                    <p className="text-lg text-gray-700 mb-6 font-medium">
                         Springwaters, a wholly Zimbabwean-owned company established in 2008, specializes in delivering high-quality, sustainable water solutions across Zimbabwe. Recognizing that reliable water access is essential for daily life, agriculture, and business, Springwaters leverages deep local expertise and an understanding of Zimbabwe's unique water challenges.
                     </p>
-                    <p className="text-lg text-gray-700 mb-6">
+                    <p className="text-lg text-gray-700 mb-6 font-medium">
                         The company is dedicated to empowering communities and clients with long-term water independence through innovative solutions, comprehensive services, and a highly experienced team. Their commitment is to provide durable, efficient, and tailored water access for homes, farms, and businesses throughout the nation.
                     </p>
                 </div>
@@ -66,7 +66,7 @@ const WaterAccessSection = () => {
                     >
                         {service.icon}
                         <h3 className="text-xl font-bold text-blue-800 mb-3 text-center">{service.title}</h3>
-                        <p className="text-gray-700 text-center text-base">{service.description}</p>
+                        <p className="text-gray-700 text-center text-base font-medium">{service.description}</p>
                     </div>
                 ))}
             </div>

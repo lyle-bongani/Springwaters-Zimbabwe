@@ -6,6 +6,21 @@ import clsx from "clsx";
 import { FiMenu, FiX } from "react-icons/fi";
 import { createPortal } from "react-dom";
 import { Link, useLocation } from 'react-router-dom';
+import {
+    FaWater,
+    FaSeedling,
+    FaTruck,
+    FaSearch,
+    FaTint,
+    FaShieldAlt,
+    FaVial,
+    FaCogs,
+    FaWarehouse,
+    FaFish,
+    FaSync,
+    FaWrench,
+    FaArrowCircleDown
+} from 'react-icons/fa';
 
 const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
 
@@ -13,6 +28,10 @@ const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
 const sectionBgMap = [
     { id: "hero-section", bg: "transparent" },
     { id: "about-section", bg: "white" },
+    { id: "mission-section", bg: "white" },
+    { id: "values-section", bg: "white" },
+    { id: "team-section", bg: "royal" },
+    { id: "services-section", bg: "white" },
     { id: "water-access-section", bg: "white" },
     { id: "why-choose-section", bg: "royal" },
     { id: "newsletter-section", bg: "white" },
@@ -31,6 +50,9 @@ const Header = () => {
     const [isNavVisible, setIsNavVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+    const dropdownContainerRef = useRef<HTMLLIElement>(null);
 
     const location = useLocation();
 
@@ -111,6 +133,18 @@ const Header = () => {
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [mobileMenuOpen]);
 
+    // Close dropdown on outside click
+    useEffect(() => {
+        if (!servicesDropdownOpen) return;
+        function handleClick(e: MouseEvent) {
+            if (dropdownContainerRef.current && !dropdownContainerRef.current.contains(e.target as Node)) {
+                setServicesDropdownOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClick);
+        return () => document.removeEventListener("mousedown", handleClick);
+    }, [servicesDropdownOpen]);
+
     return (
         <>
             <div
@@ -129,10 +163,8 @@ const Header = () => {
                         )}
                     >
                         <div className="flex items-center gap-7 w-full justify-between">
-                            {/* Logo logic: use header-logo.webp on /about, otherwise use existing logic */}
-                            {location.pathname === "/about" ? (
-                                <img src="/images/logo/header-logo.webp" alt="Springwaters Logo" className="w-32" />
-                            ) : headerBg === "white" ? (
+                            {/* Logo logic: use header-logo.webp when headerBg is white, otherwise use white logo */}
+                            {headerBg === "white" ? (
                                 <img src="/images/logo/header-logo.webp" alt="Springwaters Logo" className="w-32" />
                             ) : (
                                 <img src="/images/logo/SpringWater_Borehole Drilling Harare Zimbabwe Logo white.webp" alt="Springwaters Logo" className="w-32" />
@@ -142,7 +174,67 @@ const Header = () => {
                                 <ul className="flex space-x-10">
                                     <li><Link to="/" className="font-semibold text-blue-500 border-r border-gray-200 pr-8">Home</Link></li>
                                     <li><Link to="/about" className="font-semibold text-gray-900 border-r border-gray-200 pr-8">About</Link></li>
-                                    <li><Link to="/water-services" className="font-semibold text-gray-900 border-r border-gray-200 pr-8">Water Services</Link></li>
+                                    <li className="relative" ref={dropdownContainerRef}>
+                                        <div className="flex items-center border-r border-gray-200 pr-8">
+                                            <Link
+                                                to="/water-services"
+                                                className="font-semibold text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                                style={{ userSelect: 'none' }}
+                                                tabIndex={0}
+                                            >
+                                                Water Services
+                                            </Link>
+                                            <button
+                                                type="button"
+                                                aria-haspopup="true"
+                                                aria-expanded={servicesDropdownOpen}
+                                                aria-controls="services-dropdown-menu"
+                                                className="ml-1 p-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 transition-colors hover:bg-blue-50"
+                                                onClick={() => setServicesDropdownOpen((open) => !open)}
+                                                tabIndex={0}
+                                                style={{ verticalAlign: 'middle' }}
+                                            >
+                                                <svg className={clsx("w-5 h-5 transition-transform", servicesDropdownOpen && "rotate-180")}
+                                                    fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        {/* Dropdown */}
+                                        <div
+                                            id="services-dropdown-menu"
+                                            ref={dropdownRef}
+                                            className={clsx(
+                                                "absolute left-0 top-full min-w-[380px] bg-white shadow-2xl rounded-2xl z-50 mt-3 py-6 px-8 flex flex-col gap-3 border border-blue-100 transition-all duration-300",
+                                                servicesDropdownOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"
+                                            )}
+                                            style={{ boxShadow: '0 8px 32px 0 rgba(65,105,225,0.15)' }}
+                                            role="menu"
+                                            aria-label="Water Services"
+                                        >
+                                            <div className="font-bold text-[#4169e1] text-base mb-2 flex items-center gap-2">
+                                                {React.createElement(FaWater as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-xl text-[#4169e1]" })} Main Categories
+                                            </div>
+                                            <ul className="mb-2 grid grid-cols-1 gap-1">
+                                                <li><Link to="/water-services/borehole" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaWater as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Borehole Services</Link></li>
+                                                <li><Link to="/water-services/irrigation" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaSeedling as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Irrigation Systems</Link></li>
+                                                <li><Link to="/water-services/bulk-water-delivery" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaTruck as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Bulk Water Delivery</Link></li>
+                                            </ul>
+                                            <div className="font-bold text-[#4169e1] text-base mb-2 mt-2 flex items-center gap-2">{React.createElement(FaSearch as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-xl text-[#4169e1]" })} All Services</div>
+                                            <ul className="grid grid-cols-2 gap-x-6 gap-y-1">
+                                                <li><Link to="/water-services/borehole-siting" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaSearch as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Borehole Siting</Link></li>
+                                                <li><Link to="/water-services/borehole-drilling" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaTint as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Borehole Drilling</Link></li>
+                                                <li><Link to="/water-services/borehole-casing" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaShieldAlt as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Borehole Casing</Link></li>
+                                                <li><Link to="/water-services/water-quality-testing" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaVial as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Water Quality Testing</Link></li>
+                                                <li><Link to="/water-services/water-pump-installation" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaCogs as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Water Pump Installation</Link></li>
+                                                <li><Link to="/water-services/water-tank-installation" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaWarehouse as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Water Tank Installation</Link></li>
+                                                <li><Link to="/water-services/borehole-fishing" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaFish as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Borehole Fishing</Link></li>
+                                                <li><Link to="/water-services/borehole-flushing" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaSync as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Borehole Flushing</Link></li>
+                                                <li><Link to="/water-services/borehole-rehabilitation" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaWrench as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Borehole Rehabilitation</Link></li>
+                                                <li><Link to="/water-services/borehole-deepening" className="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition" onClick={() => setServicesDropdownOpen(false)}>{React.createElement(FaArrowCircleDown as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1]" })} Borehole Deepening</Link></li>
+                                            </ul>
+                                        </div>
+                                    </li>
                                     <li><Link to="/clients" className="font-semibold text-gray-900 border-r border-gray-200 pr-8">Our Clients</Link></li>
                                     <li><Link to="/contact" className="font-semibold text-gray-900">Contact</Link></li>
                                 </ul>

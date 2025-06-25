@@ -48,7 +48,7 @@ const WhyChooseSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                     Why Choose Springwaters: Your Trusted Water Experts
                 </h2>
-                <p className="text-lg text-blue-100 mb-2">
+                <p className="text-lg text-blue-100 mb-2 font-medium">
                     Choosing Springwaters means partnering with a team that prioritizes your water security and satisfaction. Here's why clients across Zimbabwe trust us for their water needs:
                 </p>
             </div>
@@ -57,7 +57,7 @@ const WhyChooseSection = () => {
                 <div className="transition-all duration-300">
                     <div className="bg-white border-2 border-[#4169e1] rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition min-h-[260px] flex flex-col justify-between">
                         <h3 className="text-xl font-bold text-[#4169e1] mb-3">{reasons[current].title}</h3>
-                        <p className="text-gray-700 text-base">{reasons[current].description}</p>
+                        <p className="text-gray-700 text-base font-medium">{reasons[current].description}</p>
                     </div>
                 </div>
                 {/* Carousel Controls */}
@@ -89,7 +89,7 @@ const WhyChooseSection = () => {
                         className="bg-white border-2 border-[#4169e1] rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition"
                     >
                         <h3 className="text-xl font-bold text-[#4169e1] mb-3">{reason.title}</h3>
-                        <p className="text-gray-700 text-base">{reason.description}</p>
+                        <p className="text-gray-700 text-base font-medium">{reason.description}</p>
                     </div>
                 ))}
             </div>
