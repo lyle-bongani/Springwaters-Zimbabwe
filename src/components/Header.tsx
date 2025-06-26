@@ -174,6 +174,7 @@ const Header = () => {
                                 <ul className="flex space-x-10">
                                     <li><Link to="/" className="font-semibold text-blue-500 border-r border-gray-200 pr-8">Home</Link></li>
                                     <li><Link to="/about" className="font-semibold text-gray-900 border-r border-gray-200 pr-8">About</Link></li>
+                                    <li><Link to="/process" className="font-semibold text-gray-900 border-r border-gray-200 pr-8">Our Process</Link></li>
                                     <li className="relative" ref={dropdownContainerRef}>
                                         <div className="flex items-center border-r border-gray-200 pr-8">
                                             <Link
@@ -235,7 +236,6 @@ const Header = () => {
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><Link to="/clients" className="font-semibold text-gray-900 border-r border-gray-200 pr-8">Our Clients</Link></li>
                                     <li><Link to="/contact" className="font-semibold text-gray-900">Contact</Link></li>
                                 </ul>
                             </nav>
@@ -286,8 +286,8 @@ const Header = () => {
                     <nav className="flex flex-col gap-4 mt-4 ml-6">
                         <Link to="/" className="font-semibold text-blue-500 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>Home</Link>
                         <Link to="/about" className="font-semibold text-gray-900 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>About</Link>
+                        <Link to="/process" className="font-semibold text-gray-900 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>Our Process</Link>
                         <Link to="/water-services" className="font-semibold text-gray-900 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>Water Services</Link>
-                        <Link to="/clients" className="font-semibold text-gray-900 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>Our Clients</Link>
                         <Link to="/contact" className="font-semibold text-gray-900 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
                     </nav>
                 </div>,

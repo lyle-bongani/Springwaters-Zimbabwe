@@ -48,7 +48,7 @@ const WaterAccessSection = () => {
                 {/* Right: Large Image */}
                 <div className="flex-1 flex justify-center items-center">
                     <img
-                        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=600&q=80"
+                        src="/images/pics/WhatsApp Image 2025-06-25 at 18.03.43.jpeg"
                         alt="Water Independence"
                         className="w-full max-w-xl h-[28rem] object-cover rounded-2xl shadow-lg"
                     />

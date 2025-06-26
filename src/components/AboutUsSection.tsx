@@ -10,7 +10,7 @@ const AboutUsSection = () => {
                 <div className="absolute -top-6 -left-6 w-80 h-80 bg-[#e3f0ff] rounded-3xl z-0" style={{ filter: 'blur(2px)' }} />
                 {/* Main Image */}
                 <img
-                    src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=600&q=80"
+                    src={process.env.PUBLIC_URL + '/images/pics/WhatsApp Image 2025-06-25 at 18.12.10 (1).jpeg'}
                     alt="Consultant"
                     className="w-72 h-72 object-cover rounded-2xl shadow-xl relative z-10"
                 />
@@ -21,7 +21,7 @@ const AboutUsSection = () => {
                 </div>
                 {/* Overlapping Small Image */}
                 <img
-                    src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=facearea&w=400&q=80"
+                    src={process.env.PUBLIC_URL + '/images/pics/WhatsApp Image 2025-06-25 at 18.12.09 (1).jpeg'}
                     alt="Business Woman"
                     className="w-32 h-36 object-cover rounded-xl shadow-lg absolute right-[-24px] bottom-[-24px] border-4 border-white z-20"
                 />

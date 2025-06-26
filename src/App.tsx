@@ -24,6 +24,8 @@ import BoreholeFishing from './components/services/BoreholeFishing';
 import BoreholeFlushing from './components/services/BoreholeFlushing';
 import BoreholeRehabilitation from './components/services/BoreholeRehabilitation';
 import BoreholeDeepening from './components/services/BoreholeDeepening';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import OurProcess from './pages/OurProcess';
 import './App.css';
 
 function App() {
@@ -42,6 +44,7 @@ function App() {
             </>
           } />
           <Route path="/about" element={<About />} />
+          <Route path="/process" element={<OurProcess />} />
           <Route path="/water-services" element={<WaterServices />} />
           <Route path="/water-services/borehole" element={<BoreholeServices />} />
           <Route path="/water-services/irrigation" element={<IrrigationServices />} />
@@ -58,6 +61,7 @@ function App() {
           <Route path="/water-services/borehole-deepening" element={<BoreholeDeepening />} />
           <Route path="/clients" element={<OurClients />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
         <div id="footer-section"><Footer /></div>
       </div>

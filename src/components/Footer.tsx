@@ -28,6 +28,8 @@ const Footer = () => {
             </div>
             <div className="border-t border-blue-200 mt-8 pt-6 text-center text-blue-700 text-xs">
                 &copy; {new Date().getFullYear()} Springwaters. All rights reserved.
+                <span className="mx-2">&middot;</span>
+                <a href="/privacy-policy" className="hover:underline hover:text-[#4169e1] transition">Privacy Policy</a>
             </div>
         </footer>
     );

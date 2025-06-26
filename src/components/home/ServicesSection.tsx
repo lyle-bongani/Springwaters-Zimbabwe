@@ -3,22 +3,22 @@ import React from 'react';
 const services = [
     {
         title: 'Borehole Drilling & Installation',
-        img: process.env.PUBLIC_URL + '/images/pics/title-image.jpg',
+        img: process.env.PUBLIC_URL + '/images/pics/WhatsApp Image 2025-06-25 at 18.12.10.jpeg',
         desc: 'Access reliable groundwater with our expert borehole drilling services in Zimbabwe. We provide precise siting, robust casing, and efficient pump installations (solar, electric, manual) for a consistent water supply.'
     },
     {
         title: 'Irrigation Systems & Design',
-        img: process.env.PUBLIC_URL + '/images/pics/WhatsApp Image 2025-05-10 at 16.43.52.jpeg',
+        img: process.env.PUBLIC_URL + '/images/pics/WhatsApp Image 2025-06-25 at 18.12.09.jpeg',
         desc: 'Maximize your agricultural yields and manage water efficiently with our custom irrigation system design and setup in Zimbabwe. We offer both manual and automated irrigation solutions for farms and gardens.'
     },
     {
         title: 'Bulk Water Supply & Delivery',
-        img: process.env.PUBLIC_URL + '/images/pics/WhatsApp Image 2025-05-31 at 20.01.34.jpeg',
+        img: process.env.PUBLIC_URL + '/images/pics/WhatsApp Image 2025-06-25 at 18.12.08.jpeg',
         desc: 'For immediate and convenient water needs, our bulk water delivery service in Zimbabwe brings clean water directly to your doorstep. Available in volumes from 2,000L to 20,000L for any requirement.'
     },
     {
         title: 'Borehole Maintenance',
-        img: process.env.PUBLIC_URL + '/images/pics/WhatsApp Image 2025-05-10 at 16.45.20.jpeg',
+        img: process.env.PUBLIC_URL + '/images/pics/WhatsApp Image 2025-06-25 at 18.12.07.jpeg',
         desc: 'Ensure the longevity and optimal performance of your existing borehole with our professional maintenance, repairs, and rehabilitation services. We keep your water well running smoothly.'
     },
 ];

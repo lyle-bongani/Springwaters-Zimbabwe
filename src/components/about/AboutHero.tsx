@@ -7,7 +7,7 @@ const AboutHero: React.FC = () => {
             <p className="text-2xl text-[#4169e1] text-center mb-8 font-light font-medium">Empowering Zimbabwe with reliable, clean, and sustainable water resources since 2008.</p>
             <div className="relative w-screen flex justify-center">
                 <img
-                    src="/images/pics/title-image.jpg"
+                    src="/images/pics/WhatsApp Image 2025-06-25 at 18.03.44.jpeg"
                     alt="Springwaters team at work"
                     className="w-screen h-[50vh] rounded-3xl shadow-2xl object-cover"
                 />
