@@ -32,7 +32,7 @@ const points = [
 ];
 
 const WhyChooseUsSection = () => (
-    <section className="py-16 px-4 bg-primary text-white">
+    <section id="why-choose-section" className="py-16 px-4 bg-primary text-white">
         <h2 className="text-3xl font-bold text-center mb-10">Why Choose Springwaters: Your Trusted Water Experts</h2>
         <ul className="max-w-4xl mx-auto space-y-6 text-lg">
             {points.map((point, idx) => (

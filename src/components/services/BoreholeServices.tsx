@@ -98,7 +98,7 @@ const BoreholeServices: React.FC = () => (
             <meta name="keywords" content="borehole services, drilling, siting, casing, water testing, pump installation, Zimbabwe" />
         </Helmet>
         {/* Top Banner */}
-        <div className="relative w-full h-[220px] md:h-[320px] flex items-end justify-center mb-10 overflow-hidden shadow-lg">
+        <div id="about-section" className="relative w-full h-[220px] md:h-[320px] flex items-end justify-center mb-10 overflow-hidden shadow-lg">
             <img
                 src="/images/pics/WhatsApp Image 2025-06-25 at 18.03.44.jpeg"
                 alt="Borehole Services Banner"
@@ -107,7 +107,7 @@ const BoreholeServices: React.FC = () => (
             <div className="absolute inset-0 bg-gradient-to-b from-[#4169e1]/80 via-[#4169e1]/60 to-transparent" />
             <h1 className="relative z-10 text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg mb-8 text-center">Borehole Services</h1>
         </div>
-        <section className="py-10 px-4 max-w-6xl mx-auto">
+        <section id="mission-section" className="py-10 px-4 max-w-6xl mx-auto">
             {/* Existing summary paragraph */}
             <p className="text-lg text-[#4169e1] text-center mb-10 max-w-2xl mx-auto">All the essential borehole services you need for reliable, clean water in Zimbabwe.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -127,12 +127,12 @@ const BoreholeServices: React.FC = () => (
                 ))}
             </div>
             {/* Improved Intro Content Below Cards */}
-            <div className="max-w-4xl mx-auto mt-16">
+            <div id="values-section" className="max-w-4xl mx-auto mt-16">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-[#4169e1] mb-4 text-center">Expert Borehole Services for Reliable Water Access in Zimbabwe</h2>
                 <p className="text-lg text-[#0a2259] text-center mb-6 max-w-2xl mx-auto">Springwaters provides comprehensive borehole drilling, installation, and maintenance solutions across Zimbabwe, ensuring sustainable water access for your home, farm, or business.</p>
                 <h3 className="text-xl font-bold text-[#4169e1] mb-2 mt-8">Your Trusted Partner for Water Security</h3>
                 <p className="text-base text-[#0a2259] mb-6">In Zimbabwe, consistent access to clean water is essential. Springwaters specializes in delivering dependable borehole solutions tailored to your unique needs and local geological conditions. Our over 15 years of experience, combined with advanced technology and a dedicated team, make us the preferred choice for those seeking long-term water independence.</p>
-                <h3 className="text-xl font-bold text-[#4169e1] mb-2 mt-8">Our Comprehensive Borehole Service Spectrum</h3>
+                <h3 id="why-choose-section" className="text-xl font-bold text-[#4169e1] mb-2 mt-8">Our Comprehensive Borehole Service Spectrum</h3>
                 <p className="text-base text-[#0a2259] mb-6">From initial geological surveys to the final drop of water, we manage every aspect of your borehole project with precision and expertise. Our services ensure efficiency, compliance, and lasting reliability.</p>
             </div>
         </section>

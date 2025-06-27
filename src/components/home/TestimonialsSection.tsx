@@ -22,7 +22,7 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-    <section className="py-16 px-4 bg-white">
+    <section id="values-section" className="py-16 px-4 bg-white">
         <h2 className="text-3xl font-bold text-center mb-10 text-black-grey">What Our Clients Say</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonials.map((t, idx) => (

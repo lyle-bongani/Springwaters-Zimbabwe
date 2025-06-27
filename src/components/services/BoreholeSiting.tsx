@@ -37,7 +37,7 @@ const BoreholeSiting: React.FC = () => (
             <meta name="keywords" content="borehole siting Zimbabwe" />
         </Helmet>
         {/* Hero Section - Full Width Image with Overlay */}
-        <section className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <section id="about-section" className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-[15vh]">
             <img
                 src={infoBlocks[0].img}
                 alt={infoBlocks[0].alt}
@@ -51,7 +51,7 @@ const BoreholeSiting: React.FC = () => (
         </section>
 
         {/* Alternating Image + Info Blocks */}
-        <section className="w-full flex flex-col gap-12 py-12 px-4 bg-white">
+        <section id="mission-section" className="w-full flex flex-col gap-12 py-12 px-4 bg-white">
             {infoBlocks.map((block, idx) => (
                 <div key={block.img} className={`flex flex-col md:flex-row ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center gap-8 max-w-6xl mx-auto`}>
                     <div className="flex-1 w-full">
@@ -66,7 +66,7 @@ const BoreholeSiting: React.FC = () => (
         </section>
 
         {/* Process Section - Modern, Visual, No Cards */}
-        <section className="w-full py-16 px-4 bg-white">
+        <section id="values-section" className="w-full py-16 px-4 bg-white">
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#4169e1] mb-10 text-center flex items-center justify-center gap-3">
                     {React.createElement(FaMapMarkerAlt as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1] text-4xl" })}
@@ -115,7 +115,7 @@ const BoreholeSiting: React.FC = () => (
         </section>
 
         {/* Why Choose Us Section - Modern, Visual, No Cards */}
-        <section className="w-full py-16 px-4 bg-white">
+        <section id="why-choose-section" className="w-full py-16 px-4 bg-white">
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#4169e1] mb-10 text-center flex items-center justify-center gap-3">
                     {React.createElement(FaRegFileAlt as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1] text-4xl" })}
@@ -162,7 +162,7 @@ const BoreholeSiting: React.FC = () => (
         </section>
 
         {/* Call to Action Section - Full Width */}
-        <section className="w-full py-16 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-400 text-white text-center">
+        <section id="newsletter-section" className="w-full py-16 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-400 text-white text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Find Your Ideal Water Source?</h2>
             <p className="mb-8 text-lg md:text-xl max-w-2xl mx-auto">Don't leave your borehole drilling to chance. Let Springwaters' specialists identify the perfect location for your reliable and sustainable water supply.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">

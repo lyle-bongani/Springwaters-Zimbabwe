@@ -9,19 +9,27 @@ const WaterQualityTesting: React.FC = () => (
             <meta name="description" content="Ensure safe & suitable water with Springwaters expert water quality testing in Zimbabwe. Comprehensive analysis for drinking, industrial & agricultural use." />
             <meta name="keywords" content="water quality testing Zimbabwe" />
         </Helmet>
-        {/* Hero/Intro Section */}
-        <section className="py-20 px-4 max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[#4169e1] mb-6">Expert Water Quality Testing for Safe & Suitable Water in Zimbabwe</h1>
-            <p className="text-lg md:text-xl text-[#0a2259] mb-6 max-w-2xl mx-auto">Springwaters provides comprehensive water quality testing services for boreholes across Zimbabwe, ensuring your water is safe for consumption and perfectly suited for its intended domestic, industrial, or agricultural application.</p>
+        {/* Hero/Intro Section with Background Image */}
+        <section id="about-section" className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-[15vh]">
+            <img
+                src={process.env.PUBLIC_URL + '/images/pics/WhatsApp Image 2025-06-25 at 18.12.09.jpeg'}
+                alt="Water Quality Testing Hero"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#4169e1]/80 via-[#4169e1]/60 to-transparent" />
+            <div className="relative z-10 text-center w-full px-4 pt-24 md:pt-40">
+                <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg mb-6">Expert Water Quality Testing for Safe & Suitable Water in Zimbabwe</h1>
+                <p className="text-lg md:text-xl text-white font-medium drop-shadow mb-6 max-w-2xl mx-auto">Springwaters provides comprehensive water quality testing services for boreholes across Zimbabwe, ensuring your water is safe for consumption and perfectly suited for its intended domestic, industrial, or agricultural application.</p>
+            </div>
         </section>
         {/* Value Section */}
-        <section className="bg-white py-8 px-4 max-w-4xl mx-auto">
+        <section id="mission-section" className="bg-white py-8 px-4 max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#4169e1] mb-4">The Essential Step for Peace of Mind and Optimal Use</h2>
             <p className="text-lg text-[#0a2259] mb-2">Understanding the composition of your borehole water is paramount. Detailed water analysis confirms potability, reveals minerality, pH, and any contaminants—crucial for safe use and system longevity.</p>
             <p className="text-lg text-[#0a2259] mb-2">This knowledge guides casing, filtration, and pump choices, and ensures your water is perfect for its intended use. Springwaters empowers you to utilize your borehole water safely and efficiently.</p>
         </section>
         {/* Process Section */}
-        <section className="bg-white py-12 px-4 max-w-5xl mx-auto">
+        <section id="values-section" className="bg-white py-12 px-4 max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#4169e1] mb-8 text-center flex items-center justify-center gap-2">
                 {React.createElement(FaClipboardList as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1] text-3xl" })}
                 Our Comprehensive Water Quality Testing Process
@@ -63,7 +71,7 @@ const WaterQualityTesting: React.FC = () => (
             </ol>
         </section>
         {/* Why Choose Us Section */}
-        <section className="bg-white py-12 px-4 max-w-5xl mx-auto">
+        <section id="why-choose-section" className="bg-white py-12 px-4 max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-[#4169e1] mb-8 text-center flex items-center justify-center gap-2">
                 {React.createElement(FaFileAlt as React.FC<React.SVGProps<SVGSVGElement>>, { className: "text-[#4169e1] text-3xl" })}
                 Why Choose Springwaters for Water Quality Testing in Zimbabwe?
@@ -107,7 +115,7 @@ const WaterQualityTesting: React.FC = () => (
             </div>
         </section>
         {/* Call to Action Section */}
-        <section className="w-full py-16 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-400 text-white text-center">
+        <section id="newsletter-section" className="w-full py-16 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-400 text-white text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ensure Your Water is Pure and Perfect for Your Needs!</h2>
             <p className="mb-8 text-lg md:text-xl max-w-2xl mx-auto">Don't leave your water quality to chance. Contact Springwaters today for expert water quality testing services in Zimbabwe. Gain the insights you need for safe, reliable, and optimally utilized borehole water.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../components/Header';
 import AboutHero from '../components/about/AboutHero';
 import MissionVisionSection from '../components/about/MissionVisionSection';
 import ValuesSection from '../components/about/ValuesSection';
@@ -37,6 +38,7 @@ const testimonials = [
 const About: React.FC = () => {
     return (
         <>
+            <Header forceBlackLinks={true} />
             <AboutHero />
             <MissionVisionSection />
             <ValuesSection />

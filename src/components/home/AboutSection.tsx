@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AboutSection = () => (
-    <section className="py-12 px-4 bg-white text-black-grey text-center">
+    <section id="about-section" className="py-12 px-4 bg-white text-black-grey text-center">
         <h2 className="text-3xl font-bold mb-4">Your Foundation for Water Independence in Zimbabwe</h2>
         <p className="max-w-3xl mx-auto mb-6">
             In Zimbabwe, consistent access to clean and reliable water is not just a convenience; it's a necessity for daily life, agricultural productivity, and commercial operations. We understand the unique water challenges faced by communities across the nation.

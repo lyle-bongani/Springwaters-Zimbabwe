@@ -4,7 +4,7 @@ import { FiPhone } from 'react-icons/fi';
 
 const Hero = () => {
     return (
-        <section className="relative flex items-center min-h-screen w-full bg-cover bg-center" style={{ backgroundImage: "url('/images/pics/WhatsApp Image 2025-06-25 at 18.12.10.jpeg')" }}>
+        <section className="relative flex items-center min-h-screen w-full bg-cover bg-center" style={{ backgroundImage: "url('/images/pics/hero3.jpeg')" }}>
             {/* Blue overlay for contrast */}
             <div className="absolute inset-0 bg-blue-900 bg-opacity-70 z-0" />
             {/* Content */}
@@ -17,13 +17,13 @@ const Hero = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xs sm:max-w-none">
                     <a
-                        href="#contact"
+                        href="tel:263771234567"
                         className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg shadow transition text-lg justify-center w-full sm:w-auto"
                     >
-                        {React.createElement(FiPhone as React.FC<React.SVGProps<SVGSVGElement>>, { className: 'text-2xl' })} Contact Us
+                        {React.createElement(FiPhone as React.FC<React.SVGProps<SVGSVGElement>>, { className: 'text-2xl' })} Call Us
                     </a>
                     <a
-                        href="https://wa.me/263771234567"
+                        href="https://wa.me/263772284402"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-green-500 text-white font-semibold px-8 py-4 rounded-lg shadow transition text-lg hover:bg-green-600 justify-center w-full sm:w-auto"

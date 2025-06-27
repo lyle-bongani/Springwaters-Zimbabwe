@@ -74,7 +74,7 @@ const WaterPumpInstallation: React.FC = () => (
             <meta name="keywords" content="water pump installation Zimbabwe, borehole pump Zimbabwe" />
         </Helmet>
         {/* Hero Section */}
-        <section className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <section id="about-section" className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-[15vh]">
             <img
                 src={heroImg}
                 alt="Water Pump Installation Hero"
@@ -88,7 +88,7 @@ const WaterPumpInstallation: React.FC = () => (
         </section>
 
         {/* Value Proposition Section */}
-        <section className="w-full bg-white py-12 px-4">
+        <section id="mission-section" className="w-full bg-white py-12 px-4">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
                 <div className="flex-1 order-2 md:order-1">
                     <h2 className="text-2xl md:text-3xl font-bold text-[#4169e1] mb-4">Powering Your Water Access with the Right Pump</h2>
@@ -107,7 +107,7 @@ const WaterPumpInstallation: React.FC = () => (
         </section>
 
         {/* Pump Installation Process Section */}
-        <section className="w-full bg-white py-16 px-4">
+        <section id="values-section" className="w-full bg-white py-16 px-4">
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#4169e1] mb-10 text-center flex items-center justify-center gap-3">
                     Our Comprehensive Water Pump Installation Process
@@ -136,7 +136,7 @@ const WaterPumpInstallation: React.FC = () => (
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="w-full bg-white py-16 px-4">
+        <section id="why-choose-section" className="w-full bg-white py-16 px-4">
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#4169e1] mb-10 text-center flex items-center justify-center gap-3">
                     Why Choose Springwaters for Water Pump Installation in Zimbabwe?
@@ -156,7 +156,7 @@ const WaterPumpInstallation: React.FC = () => (
         </section>
 
         {/* Call to Action Section */}
-        <section className="w-full py-16 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-400 text-white text-center">
+        <section id="newsletter-section" className="w-full py-16 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-400 text-white text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Power Your Water Supply with Springwaters!</h2>
             <p className="mb-8 text-lg md:text-xl max-w-2xl mx-auto">Ensure efficient and reliable water delivery from your borehole. Contact Springwaters today for expert water pump installation services in Zimbabwe. Let us provide the perfect pumping solution for your property.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">

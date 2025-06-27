@@ -34,7 +34,7 @@ const WaterAccessSection = () => {
             {/* New Intro Section: Two-column layout */}
             <div className="w-full max-w-6xl flex flex-col md:flex-row items-center md:gap-x-20 gap-y-12 mb-16">
                 {/* Left: Text */}
-                <div className="flex-1 text-left">
+                <div className="flex-1 text-left w-full md:w-full">
                     <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
                         Your Foundation for Water Independence in Zimbabwe
                     </h2>
@@ -46,7 +46,7 @@ const WaterAccessSection = () => {
                     </p>
                 </div>
                 {/* Right: Large Image */}
-                <div className="flex-1 flex justify-center items-center">
+                <div className="flex-1 flex justify-center items-center md:hidden">
                     <img
                         src="/images/pics/WhatsApp Image 2025-06-25 at 18.03.43.jpeg"
                         alt="Water Independence"
@@ -58,7 +58,7 @@ const WaterAccessSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-10 text-center">
                 Our Core Water Services for Zimbabwe
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-full max-w-6xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl">
                 {services.map((service, idx) => (
                     <div
                         key={idx}

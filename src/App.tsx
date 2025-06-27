@@ -27,6 +27,15 @@ import BoreholeDeepening from './components/services/BoreholeDeepening';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import OurProcess from './pages/OurProcess';
 import './App.css';
+import { useLocation } from 'react-router-dom';
+
+// ServicePageWrapper: wraps service pages to inject Header with white logo logic
+const ServicePageWrapper = ({ children }: { children: React.ReactNode }) => {
+  return <>
+    <Header forceWhiteLogo={true} />
+    {children}
+  </>;
+};
 
 function App() {
   return (
@@ -36,29 +45,30 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
-              <div id="hero-section"><Hero /></div>
-              <div id="about-section"><AboutUsSection /></div>
-              <div id="water-access-section"><WaterAccessSection /></div>
-              <div id="why-choose-section"><WhyChooseSection /></div>
-              <div id="newsletter-section"><NewsletterSection /></div>
+              <Header />
+              <Hero />
+              <AboutUsSection />
+              <WaterAccessSection />
+              <WhyChooseSection />
+              <NewsletterSection />
             </>
           } />
           <Route path="/about" element={<About />} />
           <Route path="/process" element={<OurProcess />} />
-          <Route path="/water-services" element={<WaterServices />} />
-          <Route path="/water-services/borehole" element={<BoreholeServices />} />
-          <Route path="/water-services/irrigation" element={<IrrigationServices />} />
-          <Route path="/water-services/bulk-water-delivery" element={<BulkWaterDelivery />} />
-          <Route path="/water-services/borehole-siting" element={<BoreholeSiting />} />
-          <Route path="/water-services/borehole-drilling" element={<BoreholeDrilling />} />
-          <Route path="/water-services/borehole-casing" element={<BoreholeCasing />} />
-          <Route path="/water-services/water-quality-testing" element={<WaterQualityTesting />} />
-          <Route path="/water-services/water-pump-installation" element={<WaterPumpInstallation />} />
-          <Route path="/water-services/water-tank-installation" element={<WaterTankInstallation />} />
-          <Route path="/water-services/borehole-fishing" element={<BoreholeFishing />} />
-          <Route path="/water-services/borehole-flushing" element={<BoreholeFlushing />} />
-          <Route path="/water-services/borehole-rehabilitation" element={<BoreholeRehabilitation />} />
-          <Route path="/water-services/borehole-deepening" element={<BoreholeDeepening />} />
+          <Route path="/water-services" element={<ServicePageWrapper><WaterServices /></ServicePageWrapper>} />
+          <Route path="/water-services/borehole" element={<ServicePageWrapper><BoreholeServices /></ServicePageWrapper>} />
+          <Route path="/water-services/irrigation" element={<ServicePageWrapper><IrrigationServices /></ServicePageWrapper>} />
+          <Route path="/water-services/bulk-water-delivery" element={<ServicePageWrapper><BulkWaterDelivery /></ServicePageWrapper>} />
+          <Route path="/water-services/borehole-siting" element={<ServicePageWrapper><BoreholeSiting /></ServicePageWrapper>} />
+          <Route path="/water-services/borehole-drilling" element={<ServicePageWrapper><BoreholeDrilling /></ServicePageWrapper>} />
+          <Route path="/water-services/borehole-casing" element={<ServicePageWrapper><BoreholeCasing /></ServicePageWrapper>} />
+          <Route path="/water-services/water-quality-testing" element={<ServicePageWrapper><WaterQualityTesting /></ServicePageWrapper>} />
+          <Route path="/water-services/water-pump-installation" element={<ServicePageWrapper><WaterPumpInstallation /></ServicePageWrapper>} />
+          <Route path="/water-services/water-tank-installation" element={<ServicePageWrapper><WaterTankInstallation /></ServicePageWrapper>} />
+          <Route path="/water-services/borehole-fishing" element={<ServicePageWrapper><BoreholeFishing /></ServicePageWrapper>} />
+          <Route path="/water-services/borehole-flushing" element={<ServicePageWrapper><BoreholeFlushing /></ServicePageWrapper>} />
+          <Route path="/water-services/borehole-rehabilitation" element={<ServicePageWrapper><BoreholeRehabilitation /></ServicePageWrapper>} />
+          <Route path="/water-services/borehole-deepening" element={<ServicePageWrapper><BoreholeDeepening /></ServicePageWrapper>} />
           <Route path="/clients" element={<OurClients />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -9,13 +9,13 @@ const Contact: React.FC = () => (
       <meta name="keywords" content="contact Springwaters Zimbabwe, borehole drilling, irrigation, bulk water, water solutions" />
     </Helmet>
     {/* Hero Section */}
-    <section className="w-full bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-500 py-16 px-4 text-white text-center">
+    <section id="about-section" className="w-full bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-500 min-h-[70vh] px-4 text-white text-center pt-[10vh] flex flex-col justify-center">
       <h1 className="text-3xl md:text-5xl font-extrabold mb-4">Contact Springwaters Zimbabwe</h1>
       <p className="text-lg md:text-2xl font-medium max-w-2xl mx-auto">Get in Touch with Zimbabwe's Water Experts. Whether you need a new borehole, irrigation system, or bulk water delivery, the Springwaters team is ready to assist you. Contact us today for reliable and efficient water solutions.</p>
     </section>
 
     {/* Contact Info Grid */}
-    <section className="w-full bg-white py-12 px-4">
+    <section id="mission-section" className="w-full bg-white py-12 px-4">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
           <h2 className="text-2xl font-bold text-[#4169e1] mb-4">We're Here to Help You</h2>
@@ -90,12 +90,12 @@ const Contact: React.FC = () => (
                 <label className="block text-[#0a2259] font-semibold mb-1">Your Location (Optional)</label>
                 <input type="text" placeholder="e.g., Borrowdale, Harare" className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
               </div>
-        </div>
-        <div>
+            </div>
+            <div>
               <label className="block text-[#0a2259] font-semibold mb-1">Subject (Optional)</label>
               <input type="text" placeholder="e.g., Borehole Drilling Inquiry" className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
-        </div>
-        <div>
+            </div>
+            <div>
               <label className="block text-[#0a2259] font-semibold mb-1">Your Message</label>
               <textarea required placeholder="Tell us about your water needs..." className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1] min-h-[100px]" />
             </div>
@@ -105,11 +105,11 @@ const Contact: React.FC = () => (
       </div>
     </section>
     {/* Footer CTA */}
-    <section className="w-full py-12 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-500 text-white text-center">
+    <section id="why-choose-section" className="w-full py-12 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-500 text-white text-center">
       <h2 className="text-2xl md:text-3xl font-bold mb-2">Connect with Springwaters</h2>
       <p className="mb-4 text-lg md:text-xl max-w-2xl mx-auto">We look forward to hearing from you and helping you achieve reliable water access in Zimbabwe!</p>
     </section>
   </>
-  );
+);
 
 export default Contact; 

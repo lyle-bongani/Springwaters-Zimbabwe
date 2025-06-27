@@ -11,7 +11,7 @@ const PrivacyPolicy: React.FC = () => (
             />
             <meta name="robots" content="noindex, follow" />
         </Helmet>
-        <section className="max-w-3xl mx-auto py-16 px-4 pt-[20vh]">
+        <section id="about-section" className="max-w-3xl mx-auto py-16 px-4 pt-[20vh]">
             <h1 className="text-3xl md:text-4xl font-extrabold text-[#4169e1] mb-6">Privacy Policy</h1>
             <h2 className="text-xl font-bold text-[#4169e1] mb-2">Springwaters Privacy Policy: Your Data, Our Commitment</h2>
             <p className="mb-6 text-[#0a2259]">Protecting your personal information is fundamental to our trusted service in Zimbabwe.</p>

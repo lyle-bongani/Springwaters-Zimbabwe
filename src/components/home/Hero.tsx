@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative min-h-[80vh] flex items-center justify-center bg-black overflow-hidden rounded-3xl m-4">
+        <section id="hero-section" className="relative min-h-[80vh] flex items-center justify-center bg-black overflow-hidden rounded-3xl m-4">
             {/* Background Image */}
             <img
                 src={process.env.PUBLIC_URL + '/images/pics/title-image.jpg'}

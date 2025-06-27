@@ -28,17 +28,22 @@ const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
 const sectionBgMap = [
     { id: "hero-section", bg: "transparent" },
     { id: "about-section", bg: "white" },
-    { id: "mission-section", bg: "white" },
-    { id: "values-section", bg: "white" },
-    { id: "team-section", bg: "royal" },
     { id: "services-section", bg: "white" },
-    { id: "water-access-section", bg: "white" },
     { id: "why-choose-section", bg: "royal" },
-    { id: "newsletter-section", bg: "white" },
+    { id: "values-section", bg: "white" },
     { id: "footer-section", bg: "white" },
+    { id: "mission-section", bg: "white" },
+    { id: "team-section", bg: "royal" },
+    { id: "water-access-section", bg: "white" },
+    { id: "newsletter-section", bg: "white" },
 ];
 
-const Header = () => {
+interface HeaderProps {
+    forceBlackLinks?: boolean;
+    forceWhiteLogo?: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ forceBlackLinks = false, forceWhiteLogo = false }) => {
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
     const [isIndicatorActive, setIsIndicatorActive] = useState(false);
     const [isFloating, setIsFloating] = useState(false);
@@ -56,33 +61,21 @@ const Header = () => {
 
     const location = useLocation();
 
+    const isHome = location.pathname === "/";
+    const isContact = location.pathname === "/contact";
+
     // Intersection Observer for sections
     useEffect(() => {
-        const handleSectionChange = () => {
-            let found = false;
-            for (let i = 0; i < sectionBgMap.length; i++) {
-                const section = document.getElementById(sectionBgMap[i].id);
-                if (section) {
-                    const rect = section.getBoundingClientRect();
-                    // Section is in view if its top is <= header height and its bottom is > header height
-                    if (rect.top <= 80 && rect.bottom > 80) {
-                        if (sectionBgMap[i].bg === "royal") {
-                            setHeaderBg("white");
-                        } else if (sectionBgMap[i].bg === "white") {
-                            setHeaderBg("royal");
-                        } else {
-                            setHeaderBg("transparent");
-                        }
-                        found = true;
-                        break;
-                    }
-                }
+        const handleScroll = () => {
+            if (window.scrollY === 0) {
+                setHeaderBg("transparent");
+            } else {
+                setHeaderBg("white");
             }
-            if (!found) setHeaderBg("transparent");
         };
-        window.addEventListener("scroll", handleSectionChange, { passive: true });
-        handleSectionChange();
-        return () => window.removeEventListener("scroll", handleSectionChange);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const toggleAudioIndicator = () => {
@@ -148,38 +141,78 @@ const Header = () => {
     return (
         <>
             <div
+                id="header-section"
                 ref={navContainerRef}
-                className="fixed left-1/2 top-4 z-50" style={{ height: '10vh', minHeight: '80px', width: '85vw', transform: 'translateX(-50%)' }}
+                className={clsx("fixed left-1/2 top-4 transition-all duration-200", mobileMenuOpen ? "invisible" : "z-50")}
+                style={{ height: '10vh', minHeight: '80px', width: '85vw', transform: 'translateX(-50%)' }}
             >
                 <header className="absolute top-1/2 w-full -translate-y-1/2" style={{ height: '100%' }}>
-                    <nav
+                    <nav id="header-nav"
                         className={clsx(
                             "flex size-full items-center justify-between p-4 rounded-2xl transition-colors duration-300",
                             headerBg === "white"
                                 ? "bg-white shadow-lg"
-                                : headerBg === "royal"
-                                    ? "bg-[#4169e1]"
-                                    : "bg-transparent"
+                                : "bg-transparent"
                         )}
                     >
                         <div className="flex items-center gap-7 w-full justify-between">
-                            {/* Logo logic: use header-logo.webp when headerBg is white, otherwise use white logo */}
-                            {headerBg === "white" ? (
-                                <img src="/images/logo/header-logo.webp" alt="Springwaters Logo" className="w-32" />
-                            ) : (
-                                <img src="/images/logo/SpringWater_Borehole Drilling Harare Zimbabwe Logo white.webp" alt="Springwaters Logo" className="w-32" />
+                            {/* Hide logo in header when sidebar is open on mobile */}
+                            {!mobileMenuOpen && (
+                                (forceWhiteLogo && headerBg === "transparent")
+                                    ? <img src="/images/logo/SpringWater_Borehole Drilling Harare Zimbabwe Logo white.webp" alt="Springwaters Logo" className="w-32" />
+                                    : (isHome || isContact)
+                                        ? (headerBg === "transparent"
+                                            ? <img src="/images/logo/SpringWater_Borehole Drilling Harare Zimbabwe Logo white.webp" alt="Springwaters Logo" className="w-32" />
+                                            : <img src="/images/logo/header-logo.webp" alt="Springwaters Logo" className="w-32" />)
+                                        : <img src="/images/logo/header-logo.webp" alt="Springwaters Logo" className="w-32" />
                             )}
                             {/* Desktop Nav */}
-                            <nav className="flex-1 justify-end items-center hidden md:flex">
+                            <nav className="flex-1 justify-end items-center hidden lg:flex">
                                 <ul className="flex space-x-10">
-                                    <li><Link to="/" className="font-semibold text-blue-500 border-r border-gray-200 pr-8">Home</Link></li>
-                                    <li><Link to="/about" className="font-semibold text-gray-900 border-r border-gray-200 pr-8">About</Link></li>
-                                    <li><Link to="/process" className="font-semibold text-gray-900 border-r border-gray-200 pr-8">Our Process</Link></li>
+                                    <li><Link to="/" className={clsx(
+                                        "font-semibold pr-8 transition-colors",
+                                        (headerBg === "transparent" && !forceBlackLinks)
+                                            ? location.pathname === "/"
+                                                ? "text-blue-200 font-bold"
+                                                : "text-white hover:text-blue-200"
+                                            : location.pathname === "/"
+                                                ? "text-blue-800 font-bold"
+                                                : "text-gray-900 hover:text-blue-800"
+                                    )}>Home</Link></li>
+                                    <li><Link to="/about" className={clsx(
+                                        "font-semibold pr-8 transition-colors",
+                                        (headerBg === "transparent" && !forceBlackLinks)
+                                            ? location.pathname === "/about"
+                                                ? "text-blue-200 font-bold"
+                                                : "text-white hover:text-blue-200"
+                                            : location.pathname === "/about"
+                                                ? "text-blue-800 font-bold"
+                                                : "text-gray-900 hover:text-blue-800"
+                                    )}>About</Link></li>
+                                    <li><Link to="/process" className={clsx(
+                                        "font-semibold pr-8 transition-colors",
+                                        (headerBg === "transparent" && !forceBlackLinks)
+                                            ? location.pathname === "/process"
+                                                ? "text-blue-200 font-bold"
+                                                : "text-white hover:text-blue-200"
+                                            : location.pathname === "/process"
+                                                ? "text-blue-800 font-bold"
+                                                : "text-gray-900 hover:text-blue-800"
+                                    )}>Our Process</Link></li>
                                     <li className="relative" ref={dropdownContainerRef}>
-                                        <div className="flex items-center border-r border-gray-200 pr-8">
+                                        <div className="flex items-center pr-8">
                                             <Link
                                                 to="/water-services"
-                                                className="font-semibold text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                                className={clsx(
+                                                    "font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 pr-8 transition-colors",
+                                                    (headerBg === "transparent" && !forceBlackLinks)
+                                                        ? location.pathname.startsWith("/water-services")
+                                                            ? "text-blue-200 font-bold"
+                                                            : "text-white hover:text-blue-200"
+                                                        : location.pathname.startsWith("/water-services")
+                                                            ? "text-blue-800 font-bold"
+                                                            : "text-gray-900 hover:text-blue-800"
+                                                )}
                                                 style={{ userSelect: 'none' }}
                                                 tabIndex={0}
                                             >
@@ -195,7 +228,11 @@ const Header = () => {
                                                 tabIndex={0}
                                                 style={{ verticalAlign: 'middle' }}
                                             >
-                                                <svg className={clsx("w-5 h-5 transition-transform", servicesDropdownOpen && "rotate-180")}
+                                                <svg className={clsx(
+                                                    "w-5 h-5 transition-transform",
+                                                    servicesDropdownOpen && "rotate-180",
+                                                    headerBg === "transparent" ? "text-white" : "text-blue-800"
+                                                )}
                                                     fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                                                 </svg>
@@ -236,13 +273,23 @@ const Header = () => {
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><Link to="/contact" className="font-semibold text-gray-900">Contact</Link></li>
+                                    <li><Link to="/contact" className={clsx(
+                                        "font-semibold pr-8 transition-colors",
+                                        (headerBg === "transparent" && !forceBlackLinks)
+                                            ? location.pathname === "/contact"
+                                                ? "text-blue-200 font-bold"
+                                                : "text-white hover:text-blue-200"
+                                            : location.pathname === "/contact"
+                                                ? "text-blue-800 font-bold"
+                                                : "text-gray-900 hover:text-blue-800"
+                                    )}>Contact</Link></li>
                                 </ul>
                             </nav>
                             {/* Hamburger Icon for Mobile */}
                             <button
                                 className={clsx(
-                                    "md:hidden ml-auto text-3xl text-blue-900 focus:outline-none relative w-10 h-10 flex flex-col justify-center items-center group",
+                                    "lg:hidden ml-auto text-3xl focus:outline-none relative w-10 h-10 flex flex-col justify-center items-center group",
+                                    (headerBg === "transparent" && (isHome || isContact)) ? "text-white" : "text-blue-900",
                                     mobileMenuOpen && "z-50"
                                 )}
                                 onClick={() => setMobileMenuOpen((open) => !open)}
@@ -250,15 +297,18 @@ const Header = () => {
                             >
                                 {/* Animated Hamburger/X */}
                                 <span className={clsx(
-                                    "block absolute h-0.5 w-8 bg-blue-900 rounded transition-all duration-300",
+                                    "block absolute h-0.5 w-8 rounded transition-all duration-300",
+                                    (headerBg === "transparent" && (isHome || isContact)) ? "bg-white" : "bg-blue-900",
                                     mobileMenuOpen ? "rotate-45 top-5" : "-translate-y-2"
                                 )}></span>
                                 <span className={clsx(
-                                    "block absolute h-0.5 w-8 bg-blue-900 rounded transition-all duration-300",
+                                    "block absolute h-0.5 w-8 rounded transition-all duration-300",
+                                    (headerBg === "transparent" && (isHome || isContact)) ? "bg-white" : "bg-blue-900",
                                     mobileMenuOpen ? "opacity-0" : ""
                                 )}></span>
                                 <span className={clsx(
-                                    "block absolute h-0.5 w-8 bg-blue-900 rounded transition-all duration-300",
+                                    "block absolute h-0.5 w-8 rounded transition-all duration-300",
+                                    (headerBg === "transparent" && (isHome || isContact)) ? "bg-white" : "bg-blue-900",
                                     mobileMenuOpen ? "-rotate-45 -top-5" : "translate-y-2"
                                 )}></span>
                             </button>
@@ -269,26 +319,25 @@ const Header = () => {
             {/* Mobile Side Drawer rendered in a portal */}
             {mobileMenuOpen && typeof window !== 'undefined' && createPortal(
                 <div
-                    className="fixed top-0 left-0 w-full h-full bg-white z-[9999] shadow-2xl md:hidden animate-slide-in-left"
+                    className="fixed top-0 left-0 w-full h-full bg-white z-[99999] shadow-2xl lg:hidden"
                     tabIndex={-1}
                     onClick={e => e.stopPropagation()}
                 >
-                    {/* Logo at top: always header-logo.webp on /about */}
-                    <img src="/images/logo/header-logo.webp" alt="Springwaters Logo" className="w-28 mb-8 mt-8 ml-6" />
                     {/* Close button (X) */}
                     <button
-                        className="absolute top-6 right-6 text-3xl text-blue-900 focus:outline-none"
+                        className="absolute top-6 text-3xl text-blue-900 focus:outline-none mt-4 pt-2"
+                        style={{ right: '12%' }}
                         onClick={() => setMobileMenuOpen(false)}
                         aria-label="Close menu"
                     >
                         {FiX({})}
                     </button>
-                    <nav className="flex flex-col gap-4 mt-4 ml-6">
-                        <Link to="/" className="font-semibold text-blue-500 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                        <Link to="/about" className="font-semibold text-gray-900 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>About</Link>
-                        <Link to="/process" className="font-semibold text-gray-900 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>Our Process</Link>
-                        <Link to="/water-services" className="font-semibold text-gray-900 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>Water Services</Link>
-                        <Link to="/contact" className="font-semibold text-gray-900 text-xl py-2 hover:bg-blue-50 rounded pl-2" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+                    <nav className="flex flex-col gap-4 mt-4 ml-6 pt-20">
+                        <Link to="/" className={clsx("font-semibold text-xl py-6 hover:bg-blue-50 rounded pl-2", location.pathname === "/" ? "text-blue-800 inline-block" : "text-gray-900")} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                        <Link to="/about" className={clsx("font-semibold text-xl py-6 hover:bg-blue-50 rounded pl-2", location.pathname === "/about" ? "text-blue-800 inline-block" : "text-gray-900")} onClick={() => setMobileMenuOpen(false)}>About</Link>
+                        <Link to="/process" className={clsx("font-semibold text-xl py-6 hover:bg-blue-50 rounded pl-2", location.pathname === "/process" ? "text-blue-800 inline-block" : "text-gray-900")} onClick={() => setMobileMenuOpen(false)}>Our Process</Link>
+                        <Link to="/water-services" className={clsx("font-semibold text-xl py-6 hover:bg-blue-50 rounded pl-2", location.pathname.startsWith("/water-services") ? "text-blue-800 inline-block" : "text-gray-900")} onClick={() => setMobileMenuOpen(false)}>Water Services</Link>
+                        <Link to="/contact" className={clsx("font-semibold text-xl py-6 hover:bg-blue-50 rounded pl-2", location.pathname === "/contact" ? "text-blue-800 inline-block" : "text-gray-900")} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
                     </nav>
                 </div>,
                 document.body

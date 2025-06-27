@@ -39,7 +39,7 @@ const IrrigationServices: React.FC = () => (
             <meta name="keywords" content="irrigation Zimbabwe, irrigation design, irrigation installation, irrigation maintenance, water efficiency" />
         </Helmet>
         {/* Hero Section */}
-        <section className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <section id="about-section" className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-[15vh]">
             <img
                 src={heroImg}
                 alt="Irrigation Services Hero"
@@ -54,7 +54,7 @@ const IrrigationServices: React.FC = () => (
         </section>
 
         {/* Value Proposition Section */}
-        <section className="w-full bg-white py-12 px-4">
+        <section id="mission-section" className="w-full bg-white py-12 px-4">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
                 <div className="flex-1 order-2 md:order-1">
                     <h2 className="text-2xl md:text-3xl font-bold text-[#4169e1] mb-4">Optimize Your Water Usage for Better Yields</h2>
@@ -71,7 +71,7 @@ const IrrigationServices: React.FC = () => (
         </section>
 
         {/* Service Spectrum Section */}
-        <section className="w-full bg-white py-12 px-4">
+        <section id="values-section" className="w-full bg-white py-12 px-4">
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#4169e1] mb-8 text-center">Our Specialized Irrigation Services</h2>
                 <div className="flex flex-col gap-10">
@@ -106,7 +106,7 @@ const IrrigationServices: React.FC = () => (
             </div>
         </section>
         {/* Provided Content Section */}
-        <section className="w-full bg-white py-12 px-4">
+        <section id="team-section" className="w-full bg-white py-12 px-4">
             <div className="max-w-4xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-[#4169e1] mb-4 text-center">Efficient Irrigation Systems for Growth in Zimbabwe</h2>
                 <p className="text-lg text-[#0a2259] text-center mb-6 max-w-2xl mx-auto">Springwaters delivers intelligent irrigation solutions across Zimbabwe, maximizing water efficiency and promoting thriving landscapes for agriculture, commercial properties, and residential gardens.</p>
@@ -118,7 +118,7 @@ const IrrigationServices: React.FC = () => (
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="w-full bg-white py-16 px-4">
+        <section id="why-choose-section" className="w-full bg-white py-16 px-4">
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#4169e1] mb-10 text-center flex items-center justify-center gap-3">
                     Why Choose Springwaters for Your Irrigation Project?
@@ -138,7 +138,7 @@ const IrrigationServices: React.FC = () => (
         </section>
 
         {/* Call to Action Section */}
-        <section className="w-full py-16 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-400 text-white text-center">
+        <section id="newsletter-section" className="w-full py-16 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-400 text-white text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Grow with Efficient Water?</h2>
             <p className="mb-8 text-lg md:text-xl max-w-2xl mx-auto">Contact Springwaters today to discuss your irrigation needs in Zimbabwe and receive a customized solution designed for success. We are dedicated to helping you achieve optimal water management.</p>
             <a href="/contact" className="inline-block bg-white text-[#4169e1] font-semibold px-10 py-4 rounded-lg shadow hover:bg-blue-100 transition text-lg">Contact Us</a>

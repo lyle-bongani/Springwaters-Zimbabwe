@@ -64,7 +64,7 @@ const BoreholeFishing: React.FC = () => (
             <meta name="keywords" content="borehole fishing Zimbabwe" />
         </Helmet>
         {/* Hero Section */}
-        <section className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <section id="about-section" className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-[15vh]">
             <img
                 src={heroImg}
                 alt="Borehole Fishing Hero"
@@ -78,7 +78,7 @@ const BoreholeFishing: React.FC = () => (
         </section>
 
         {/* Value Proposition Section */}
-        <section className="w-full bg-white py-12 px-4">
+        <section id="mission-section" className="w-full bg-white py-12 px-4">
             <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
                 <div className="flex-1 text-center md:text-left">
                     <h2 className="text-2xl md:text-3xl font-bold text-[#4169e1] mb-4">When Your Borehole Needs a Helping Hand</h2>
@@ -93,7 +93,7 @@ const BoreholeFishing: React.FC = () => (
         </section>
 
         {/* Fishing Process Section */}
-        <section className="w-full bg-white py-16 px-4">
+        <section id="values-section" className="w-full bg-white py-16 px-4">
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#4169e1] mb-10 text-center flex items-center justify-center gap-3">
                     Our Meticulous Borehole Fishing Process
@@ -122,7 +122,7 @@ const BoreholeFishing: React.FC = () => (
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="w-full bg-white py-16 px-4">
+        <section id="why-choose-section" className="w-full bg-white py-16 px-4">
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#4169e1] mb-10 text-center flex items-center justify-center gap-3">
                     Why Choose Springwaters for Borehole Fishing in Zimbabwe?
@@ -142,7 +142,7 @@ const BoreholeFishing: React.FC = () => (
         </section>
 
         {/* Call to Action Section */}
-        <section className="w-full py-16 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-400 text-white text-center">
+        <section id="newsletter-section" className="w-full py-16 px-4 bg-[#4169e1] bg-gradient-to-br from-[#4169e1] to-blue-400 text-white text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Has Your Borehole Lost Its Flow?</h2>
             <p className="mb-8 text-lg md:text-xl max-w-2xl mx-auto">If your borehole is obstructed or experiencing reduced performance due to fallen objects, don't delay. Contact Springwaters today for expert borehole fishing services in Zimbabwe. Let us restore your reliable water supply.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">

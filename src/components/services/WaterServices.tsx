@@ -60,7 +60,7 @@ const WaterServices: React.FC = () => {
     return (
         <>
             {/* Hero Banner */}
-            <div className="relative w-full h-[320px] md:h-[400px] flex items-center justify-center mb-12 rounded-3xl overflow-hidden shadow-lg">
+            <div id="about-section" className="relative w-full h-[320px] md:h-[400px] flex items-center justify-center mb-12 overflow-hidden shadow-lg pt-[15vh] rounded-b-3xl">
                 <img
                     src="/images/pics/WhatsApp Image 2025-06-25 at 18.03.44.jpeg"
                     alt="Water Services Hero"
@@ -74,13 +74,13 @@ const WaterServices: React.FC = () => {
             </div>
 
             {/* Main Service Categories */}
-            <section className="w-full max-w-6xl mx-auto mb-16 px-4">
+            <section id="mission-section" className="w-full max-w-6xl mx-auto mb-16 px-4">
                 <h2 className="text-2xl font-bold text-[#4169e1] mb-2 text-center">Featured Services</h2>
                 <p className="text-center text-[#0a2259] mb-8 opacity-80">Our most popular and essential water solutions for homes, farms, and businesses.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
                     {mainServices.map(({ Icon, ...service }, idx) => {
                         // Pick a local image for each main service (now removed)
-                    return (
+                        return (
                             <Link
                                 to={service.to}
                                 key={idx}
@@ -94,13 +94,13 @@ const WaterServices: React.FC = () => {
                                 <p className="text-[#0a2259] text-base mb-2 opacity-80 font-medium z-10">{service.desc}</p>
                                 <span className="text-[#4169e1] font-semibold mt-2 group-hover:underline text-sm z-10">Learn More &rarr;</span>
                             </Link>
-                    );
-                })}
-            </div>
-        </section>
+                        );
+                    })}
+                </div>
+            </section>
 
             {/* All Services Grid */}
-            <section className="w-full max-w-6xl mx-auto px-4">
+            <section id="values-section" className="w-full max-w-6xl mx-auto px-4">
                 <h3 className="text-2xl font-bold text-[#4169e1] mb-6 text-center">All Our Services</h3>
                 <div className="flex justify-center mb-8">
                     <div className="relative w-full max-w-md">

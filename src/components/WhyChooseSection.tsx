@@ -82,7 +82,7 @@ const WhyChooseSection = () => {
                 </div>
             </div>
             {/* Desktop Grid */}
-            <div className="hidden md:grid grid-cols-3 gap-8 max-w-5xl w-full relative z-10">
+            <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl w-full relative z-10">
                 {reasons.map((reason, idx) => (
                     <div
                         key={idx}
