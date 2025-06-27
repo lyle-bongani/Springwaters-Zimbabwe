@@ -28,6 +28,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import OurProcess from './pages/OurProcess';
 import './App.css';
 import { useLocation } from 'react-router-dom';
+import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 
 // ServicePageWrapper: wraps service pages to inject Header with white logo logic
 const ServicePageWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -73,6 +74,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
+        <WhatsAppFloatingButton />
         <div id="footer-section"><Footer /></div>
       </div>
     </Router>

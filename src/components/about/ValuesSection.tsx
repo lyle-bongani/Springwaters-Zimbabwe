@@ -25,11 +25,11 @@ const values = [
 ];
 
 const cardStyles = [
-    'bg-white text-[#4169e1] rotate-[-2deg] shadow-lg',
-    'bg-[#4169e1] text-white rotate-[2deg] shadow-xl',
-    'bg-white text-[#4169e1] rotate-[-1deg] shadow-lg',
-    'bg-white text-[#4169e1] rotate-[1deg] shadow-lg',
-    'bg-[#4169e1] text-white rotate-[-2deg] shadow-xl',
+    'bg-white text-[#4169e1] shadow-lg',
+    'bg-[#4169e1] text-white shadow-xl',
+    'bg-white text-[#4169e1] shadow-lg',
+    'bg-white text-[#4169e1] shadow-lg',
+    'bg-[#4169e1] text-white shadow-xl',
 ];
 
 const cardOffsets = [

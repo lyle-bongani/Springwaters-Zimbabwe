@@ -1,35 +1,49 @@
 import React, { useState } from 'react';
+import { FaMedal, FaHandsHelping, FaMoneyBillWave, FaMicrochip, FaUserShield, FaLeaf } from 'react-icons/fa';
+import type { IconType } from 'react-icons';
 
-const reasons = [
+interface Reason {
+    title: string;
+    description: string;
+    icon: IconType;
+}
+
+const reasons: Reason[] = [
     {
         title: 'Proven Expertise & Experience',
         description:
             'With over 15 years in the field, our team, led by industry veterans like Munesu Tsiga, brings unparalleled experience to every project. From precise borehole siting to complex irrigation designs and pump installations, our deep knowledge ensures optimal results. We are the borehole contractors you can rely on.',
+        icon: FaMedal,
     },
     {
         title: 'Comprehensive Water Solutions',
         description:
             'We offer a full spectrum of water services in Zimbabwe, meaning you only need one trusted partner. From the initial survey and drilling to pump installation, irrigation setup, and ongoing maintenance, we provide end-to-end solutions.',
+        icon: FaHandsHelping,
     },
     {
         title: 'Transparent & Affordable Pricing',
         description:
             'Experience clear, upfront costing with our competitive borehole prices in Zimbabwe. For clients in Harare, we cover travel costs, and for areas outside Harare, fuel costs are precisely calculated and communicated upfront.',
+        icon: FaMoneyBillWave,
     },
     {
         title: 'Cutting-Edge Technology',
         description:
             'We invest in modern geophysical equipment for accurate groundwater surveys and advanced drilling rigs for efficient water well boring. This commitment to technology ensures precise and effective water extraction.',
+        icon: FaMicrochip,
     },
     {
         title: 'Customer-Centric Approach & Trustworthiness',
         description:
             'Your satisfaction is our ultimate priority. We listen attentively to your requirements, provide tailored advice, and deliver solutions that fit your specific needs and budget. Our relationships are built on transparency, reliability, and genuine peace of mind.',
+        icon: FaUserShield,
     },
     {
         title: 'Sustainability Focus',
         description:
             'We are committed to environmentally responsible practices. We offer eco-friendly options like solar pump installations and efficient irrigation designs to minimize environmental impact and promote long-term water conservation.',
+        icon: FaLeaf,
     },
 ];
 
@@ -56,6 +70,13 @@ const WhyChooseSection = () => {
             <div className="w-full max-w-xs mx-auto block md:hidden relative z-10">
                 <div className="transition-all duration-300">
                     <div className="bg-white border-2 border-[#4169e1] rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition min-h-[260px] flex flex-col justify-between">
+                        {(() => {
+                            const Icon = reasons[current].icon; return (
+                                <span className="mb-3 text-3xl text-[#4169e1] flex items-center justify-center">
+                                    {Icon && React.createElement(Icon as React.JSXElementConstructor<any>, { size: 32 })}
+                                </span>
+                            );
+                        })()}
                         <h3 className="text-xl font-bold text-[#4169e1] mb-3">{reasons[current].title}</h3>
                         <p className="text-gray-700 text-base font-medium">{reasons[current].description}</p>
                     </div>
@@ -88,6 +109,13 @@ const WhyChooseSection = () => {
                         key={idx}
                         className="bg-white border-2 border-[#4169e1] rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition"
                     >
+                        {(() => {
+                            const Icon = reason.icon; return (
+                                <span className="mb-3 text-3xl text-[#4169e1] flex items-center justify-center">
+                                    {Icon && React.createElement(Icon as React.JSXElementConstructor<any>, { size: 32 })}
+                                </span>
+                            );
+                        })()}
                         <h3 className="text-xl font-bold text-[#4169e1] mb-3">{reason.title}</h3>
                         <p className="text-gray-700 text-base font-medium">{reason.description}</p>
                     </div>

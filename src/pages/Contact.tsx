@@ -23,11 +23,9 @@ const Contact: React.FC = () => (
           <div className="mb-6">
             <h3 className="font-semibold text-[#4169e1] mb-2">Phone Numbers:</h3>
             <ul className="space-y-1 text-[#0a2259]">
-              <li><span className="font-bold">Office Landline:</span> <a href="tel:+263242861836" className="hover:underline">0242 861836</a></li>
-              <li><span className="font-bold">Munesu Tsiga (Managing Director):</span> <a href="tel:+263772284402" className="hover:underline">0772 284 402</a></li>
-              <li><span className="font-bold">Dazzy Tumbu (Finance & Admin):</span> <a href="tel:+263712423333" className="hover:underline">0712 423 333</a></li>
-              <li><span className="font-bold">General Enquiries:</span> <a href="tel:+263712439344" className="hover:underline">0712 439 344</a></li>
-              <li><span className="font-bold">General Enquiries:</span> <a href="tel:+263772814698" className="hover:underline">0772 814 698</a></li>
+              <li><span className="font-bold">Mobile (WhatsApp):</span> <a href="tel:+263772284402" className="hover:underline">+263 77 228 4402</a></li>
+              <li><span className="font-bold">Mobile:</span> <a href="tel:+263712439344" className="hover:underline">+263 71 243 9344</a></li>
+              <li><span className="font-bold">Office Landline:</span> <a href="tel:+263242861836" className="hover:underline">+263 24 286 1836</a></li>
             </ul>
           </div>
           <div className="mb-6">
@@ -69,38 +67,7 @@ const Contact: React.FC = () => (
             ></iframe>
           </div>
           {/* Contact Form */}
-          <form className="bg-blue-50 rounded-xl p-6 shadow flex flex-col gap-4">
-            <h3 className="text-xl font-bold text-[#4169e1] mb-2">Send Us a Message</h3>
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="flex-1">
-                <label className="block text-[#0a2259] font-semibold mb-1">Full Name</label>
-                <input type="text" required placeholder="Your Full Name" className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
-              </div>
-              <div className="flex-1">
-                <label className="block text-[#0a2259] font-semibold mb-1">Phone Number</label>
-                <input type="tel" required placeholder="e.g., +263 771 234 567" className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="flex-1">
-                <label className="block text-[#0a2259] font-semibold mb-1">Email Address (Optional)</label>
-                <input type="email" placeholder="your.email@example.com" className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
-              </div>
-              <div className="flex-1">
-                <label className="block text-[#0a2259] font-semibold mb-1">Your Location (Optional)</label>
-                <input type="text" placeholder="e.g., Borrowdale, Harare" className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-[#0a2259] font-semibold mb-1">Subject (Optional)</label>
-              <input type="text" placeholder="e.g., Borehole Drilling Inquiry" className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
-            </div>
-            <div>
-              <label className="block text-[#0a2259] font-semibold mb-1">Your Message</label>
-              <textarea required placeholder="Tell us about your water needs..." className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1] min-h-[100px]" />
-            </div>
-            <button type="submit" className="mt-2 bg-[#4169e1] hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg shadow transition text-lg">Send Message</button>
-          </form>
+          <ContactMailtoForm />
         </div>
       </div>
     </section>
@@ -111,5 +78,69 @@ const Contact: React.FC = () => (
     </section>
   </>
 );
+
+// Mailto form component
+const ContactMailtoForm: React.FC = () => {
+  const [form, setForm] = React.useState({
+    name: '',
+    phone: '',
+    email: '',
+    location: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const mailto = `mailto:sales@springwaterszim.co.zw?subject=${encodeURIComponent(form.subject || 'Springwaters Contact Form')}` +
+      `&body=${encodeURIComponent(
+        `Full Name: ${form.name}\n` +
+        `Phone Number: ${form.phone}\n` +
+        (form.email ? `Email: ${form.email}\n` : '') +
+        (form.location ? `Location: ${form.location}\n` : '') +
+        `\nMessage:\n${form.message}`
+      )}`;
+    window.location.href = mailto;
+  };
+
+  return (
+    <form className="bg-blue-50 rounded-xl p-6 shadow flex flex-col gap-4" onSubmit={handleSubmit}>
+      <h3 className="text-xl font-bold text-[#4169e1] mb-2">Send Us a Message</h3>
+      <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex-1">
+          <label className="block text-[#0a2259] font-semibold mb-1">Full Name</label>
+          <input type="text" name="name" required placeholder="Your Full Name" value={form.name} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
+        </div>
+        <div className="flex-1">
+          <label className="block text-[#0a2259] font-semibold mb-1">Phone Number</label>
+          <input type="tel" name="phone" required placeholder="e.g., +263 771 234 567" value={form.phone} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
+        </div>
+      </div>
+      <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex-1">
+          <label className="block text-[#0a2259] font-semibold mb-1">Email Address (Optional)</label>
+          <input type="email" name="email" placeholder="your.email@example.com" value={form.email} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
+        </div>
+        <div className="flex-1">
+          <label className="block text-[#0a2259] font-semibold mb-1">Your Location (Optional)</label>
+          <input type="text" name="location" placeholder="e.g., Borrowdale, Harare" value={form.location} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
+        </div>
+      </div>
+      <div>
+        <label className="block text-[#0a2259] font-semibold mb-1">Subject (Optional)</label>
+        <input type="text" name="subject" placeholder="e.g., Borehole Drilling Inquiry" value={form.subject} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
+      </div>
+      <div>
+        <label className="block text-[#0a2259] font-semibold mb-1">Your Message</label>
+        <textarea name="message" required placeholder="Tell us about your water needs..." value={form.message} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1] min-h-[100px]" />
+      </div>
+      <button type="submit" className="mt-2 bg-[#4169e1] hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg shadow transition text-lg">Send Message</button>
+    </form>
+  );
+};
 
 export default Contact; 

@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
                         Contact Us
                     </a>
                     <a
-                        href="https://wa.me/263771234567"
+                        href="https://wa.me/263772284402"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-green-500 text-white font-semibold px-10 py-4 rounded shadow hover:bg-green-600 transition-colors duration-200 text-lg"
