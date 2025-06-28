@@ -30,6 +30,7 @@ import SiteMap from './pages/SiteMap';
 import './App.css';
 import { useLocation } from 'react-router-dom';
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
+import ScrollToTop from './components/ScrollToTop';
 
 // ServicePageWrapper: wraps service pages to inject Header with white logo logic
 const ServicePageWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -50,6 +51,7 @@ const SiteMapWrapper = ({ children }: { children: React.ReactNode }) => {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-white shadow-lg overflow-hidden font-sans">
         <Header />
         <Routes>
