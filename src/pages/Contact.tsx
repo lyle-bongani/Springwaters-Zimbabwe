@@ -109,37 +109,37 @@ const ContactMailtoForm: React.FC = () => {
 
   return (
     <form className="bg-blue-50 rounded-xl p-6 shadow flex flex-col gap-4" onSubmit={handleSubmit}>
-      <h3 className="text-xl font-bold text-[#4169e1] mb-2">Send Us a Message</h3>
-      <div className="flex flex-col md:flex-row gap-4">
-        <div className="flex-1">
-          <label className="block text-[#0a2259] font-semibold mb-1">Full Name</label>
+            <h3 className="text-xl font-bold text-[#4169e1] mb-2">Send Us a Message</h3>
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex-1">
+                <label className="block text-[#0a2259] font-semibold mb-1">Full Name</label>
           <input type="text" name="name" required placeholder="Your Full Name" value={form.name} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
-        </div>
-        <div className="flex-1">
-          <label className="block text-[#0a2259] font-semibold mb-1">Phone Number</label>
+              </div>
+              <div className="flex-1">
+                <label className="block text-[#0a2259] font-semibold mb-1">Phone Number</label>
           <input type="tel" name="phone" required placeholder="e.g., +263 771 234 567" value={form.phone} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
-        </div>
-      </div>
-      <div className="flex flex-col md:flex-row gap-4">
-        <div className="flex-1">
-          <label className="block text-[#0a2259] font-semibold mb-1">Email Address (Optional)</label>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex-1">
+                <label className="block text-[#0a2259] font-semibold mb-1">Email Address (Optional)</label>
           <input type="email" name="email" placeholder="your.email@example.com" value={form.email} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
-        </div>
-        <div className="flex-1">
-          <label className="block text-[#0a2259] font-semibold mb-1">Your Location (Optional)</label>
+              </div>
+              <div className="flex-1">
+                <label className="block text-[#0a2259] font-semibold mb-1">Your Location (Optional)</label>
           <input type="text" name="location" placeholder="e.g., Borrowdale, Harare" value={form.location} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
+              </div>
         </div>
-      </div>
-      <div>
-        <label className="block text-[#0a2259] font-semibold mb-1">Subject (Optional)</label>
+        <div>
+              <label className="block text-[#0a2259] font-semibold mb-1">Subject (Optional)</label>
         <input type="text" name="subject" placeholder="e.g., Borehole Drilling Inquiry" value={form.subject} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1]" />
-      </div>
-      <div>
-        <label className="block text-[#0a2259] font-semibold mb-1">Your Message</label>
+        </div>
+        <div>
+              <label className="block text-[#0a2259] font-semibold mb-1">Your Message</label>
         <textarea name="message" required placeholder="Tell us about your water needs..." value={form.message} onChange={handleChange} className="w-full px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#4169e1] min-h-[100px]" />
-      </div>
-      <button type="submit" className="mt-2 bg-[#4169e1] hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg shadow transition text-lg">Send Message</button>
-    </form>
+            </div>
+            <button type="submit" className="mt-2 bg-[#4169e1] hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg shadow transition text-lg">Send Message</button>
+          </form>
   );
 };
 

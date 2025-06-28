@@ -80,7 +80,7 @@ const WaterServices: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
                     {mainServices.map(({ Icon, ...service }, idx) => {
                         // Pick a local image for each main service (now removed)
-                        return (
+                    return (
                             <Link
                                 to={service.to}
                                 key={idx}
@@ -94,10 +94,10 @@ const WaterServices: React.FC = () => {
                                 <p className="text-[#0a2259] text-base mb-2 opacity-80 font-medium z-10">{service.desc}</p>
                                 <span className="text-[#4169e1] font-semibold mt-2 group-hover:underline text-sm z-10">Learn More &rarr;</span>
                             </Link>
-                        );
-                    })}
-                </div>
-            </section>
+                    );
+                })}
+            </div>
+        </section>
 
             {/* All Services Grid */}
             <section id="values-section" className="w-full max-w-6xl mx-auto px-4">

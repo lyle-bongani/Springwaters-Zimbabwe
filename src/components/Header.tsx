@@ -159,12 +159,12 @@ const Header: React.FC<HeaderProps> = ({ forceBlackLinks = false, forceWhiteLogo
                             {/* Hide logo in header when sidebar is open on mobile */}
                             {!mobileMenuOpen && (
                                 (forceWhiteLogo && headerBg === "transparent")
-                                    ? <img src="/images/logo/SpringWater_Borehole Drilling Harare Zimbabwe Logo white.webp" alt="Springwaters Logo" className="w-32" />
+                                    ? <img src="/images/logo/SpringWater_Borehole Drilling Harare Zimbabwe Logo white.webp" alt="Springwaters Logo" className="w-36" />
                                     : (isHome || isContact)
                                         ? (headerBg === "transparent"
-                                            ? <img src="/images/logo/SpringWater_Borehole Drilling Harare Zimbabwe Logo white.webp" alt="Springwaters Logo" className="w-32" />
-                                            : <img src="/images/logo/header-logo.webp" alt="Springwaters Logo" className="w-32" />)
-                                        : <img src="/images/logo/header-logo.webp" alt="Springwaters Logo" className="w-32" />
+                                            ? <img src="/images/logo/SpringWater_Borehole Drilling Harare Zimbabwe Logo white.webp" alt="Springwaters Logo" className="w-36" />
+                                            : <img src="/images/logo/header-logo.webp" alt="Springwaters Logo" className="w-36" />)
+                                        : <img src="/images/logo/header-logo.webp" alt="Springwaters Logo" className="w-36" />
                             )}
                             {/* Desktop Nav */}
                             <nav className="flex-1 justify-end items-center hidden lg:flex">
@@ -231,7 +231,7 @@ const Header: React.FC<HeaderProps> = ({ forceBlackLinks = false, forceWhiteLogo
                                                 <svg className={clsx(
                                                     "w-5 h-5 transition-transform",
                                                     servicesDropdownOpen && "rotate-180",
-                                                    headerBg === "transparent" ? "text-white" : "text-blue-800"
+                                                    forceBlackLinks ? "text-blue-900" : (headerBg === "transparent" ? "text-white" : "text-blue-800")
                                                 )}
                                                     fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />

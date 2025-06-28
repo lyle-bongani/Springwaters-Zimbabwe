@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const AboutUsSection = () => {
     return (
@@ -36,27 +37,27 @@ const AboutUsSection = () => {
                     We Are Business Consultants Dedicated To Driving Your Success
                 </h2>
                 <p className="text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg md:text-xl font-medium">
-                    At Springwaters, we are your trusted partner for comprehensive water solutions, committed to ensuring sustainable and clean water access throughout Zimbabwe.
+                    At Springwaters, we are dedicated specialists in delivering innovative water solutions designed to empower your success. Our mission is to provide sustainable and reliable water access across Zimbabwe, supporting communities, agriculture, and businesses with unmatched professionalism.
                 </p>
                 <p className="text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg md:text-xl font-medium">
-                    Our expertise spans from initial site assessment to complete system installation, addressing the diverse needs of our clients.
+                    With a comprehensive approach, we manage every stage—from thorough site evaluations to seamless system installations—ensuring each project meets the unique requirements of our clients.
                 </p>
                 <p className="text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg md:text-xl font-medium">
-                    Whether you require expert borehole drilling for a new water source, efficient irrigation systems to boost agricultural productivity, or dependable bulk water supply for immediate needs.
+                    Whether you need advanced borehole drilling, modern irrigation systems to enhance productivity, or secure bulk water supply for urgent demands, Springwaters is your trusted partner.
                 </p>
                 <p className="text-gray-700 mb-6 sm:mb-10 text-base sm:text-lg md:text-xl font-medium">
-                    Springwaters delivers tailored solutions for homes, farms, and businesses across the nation.
+                    We pride ourselves on delivering customized solutions for households, farms, and enterprises nationwide, setting the standard for quality and dependability in the water industry.
                 </p>
                 <div className="flex items-center mb-4 sm:mb-6">
                     {FaRegCalendarAlt({ className: "text-[#4169e1] text-xl sm:text-2xl mr-2 sm:mr-3" })}
                     <div>
-                        <div className="font-bold text-[#4169e1] text-sm sm:text-base">15 Years Of Experience</div>
-                        <div className="text-gray-500 text-xs sm:text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div className="font-bold text-[#4169e1] text-sm sm:text-base">15 Years of Expertise</div>
+                        <div className="text-gray-500 text-xs sm:text-sm">Benefit from our extensive industry experience and trusted service in delivering high-quality water solutions.</div>
                     </div>
                 </div>
-                <button className="bg-[#4169e1] hover:bg-blue-700 text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow transition flex items-center gap-2 text-sm sm:text-base">
-                    Learn More <span className="text-base sm:text-lg">→</span>
-                </button>
+                <Link to="/about" className="inline-block bg-[#4169e1] hover:bg-blue-700 text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow transition text-sm sm:text-base">
+                    <span className="flex items-center gap-2">Learn More <span className="text-base sm:text-lg">→</span></span>
+                </Link>
             </div>
         </section>
     );

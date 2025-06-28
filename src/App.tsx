@@ -26,6 +26,7 @@ import BoreholeRehabilitation from './components/services/BoreholeRehabilitation
 import BoreholeDeepening from './components/services/BoreholeDeepening';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import OurProcess from './pages/OurProcess';
+import SiteMap from './pages/SiteMap';
 import './App.css';
 import { useLocation } from 'react-router-dom';
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
@@ -34,6 +35,14 @@ import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 const ServicePageWrapper = ({ children }: { children: React.ReactNode }) => {
   return <>
     <Header forceWhiteLogo={true} />
+    {children}
+  </>;
+};
+
+// SiteMapWrapper: wraps SiteMap page to inject Header with black links logic
+const SiteMapWrapper = ({ children }: { children: React.ReactNode }) => {
+  return <>
+    <Header forceBlackLinks={true} />
     {children}
   </>;
 };
@@ -73,6 +82,7 @@ function App() {
           <Route path="/clients" element={<OurClients />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/site-map" element={<SiteMapWrapper><SiteMap /></SiteMapWrapper>} />
         </Routes>
         <WhatsAppFloatingButton />
         <div id="footer-section"><Footer /></div>
